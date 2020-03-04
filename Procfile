@@ -1,0 +1,1 @@
+worker1: php core/db_handler.php
