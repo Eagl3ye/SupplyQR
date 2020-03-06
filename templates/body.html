@@ -12,10 +12,10 @@
 				<form name="insert" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" >
 					<li>ADD AN ARTICLE:</li>
 					<li>
-						<input type="text" name="add_item" />
+						<input type="text" name="add_item" autocomplete="off"/>
 					</li>
 					<li>
-						<input type="submit" name="insertdata"/>
+						<input type="submit" name="insertdata" value="Add" />
 					</li>
 				</form>
 			</ul>
@@ -30,7 +30,7 @@
 				<form name="fetch" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" >
 					<li>FIND AN ARTICLE:</li>
 					<li>
-						<input type="submit" name="fetchdata"/>
+						<input type="submit" name="fetchdata" value="Find" />
 					</li>
 				</form>
 			</ul>			
