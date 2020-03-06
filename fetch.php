@@ -1,6 +1,6 @@
 <?php
 	$conn = pg_connect(getenv("DATABASE_URL"));
-	$query = "SELECT * FROM cars LIMIT 5"; 
+	$query = "SELECT * FROM items"; 
 
 	$rs = pg_query($con, $query) or die("Cannot execute query: $query\n");
 
