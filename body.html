@@ -1,0 +1,36 @@
+		<h2>Manage Item</h2>
+		<div class="m-auto">
+			<ul>
+				<?php
+					if(isset($_POST['insertdata'])) 
+					{
+						$name1 = $_POST['add_item'];
+						echo "User Has submitted the form and entered this: <b> $name1 </b>";
+					}
+				?>
+				<form name="insert" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" >
+					<li>ADD AN ARTICLE:</li>
+					<li>
+						<input type="text" name="add_item" />
+					</li>
+					<li>
+						<input type="submit" name="insertdata"/>
+					</li>
+				</form>
+			</ul>
+			
+			<ul>
+				<?php
+					if(isset($_POST['fetchdata'])) 
+					{
+						include("fetch.php");
+					}
+				?>
+				<form name="fetch" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" >
+					<li>FIND AN ARTICLE:</li>
+					<li>
+						<input type="submit" name="fetchdata"/>
+					</li>
+				</form>
+			</ul>			
+		</div>
