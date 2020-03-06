@@ -6,6 +6,7 @@
 					{
 						$name1 = $_POST['add_item'];
 						echo "User Has submitted the form and entered this: <b> $name1 </b>";
+						include("fetch.php");
 					}
 				?>
 				<form name="insert" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" >
@@ -23,7 +24,7 @@
 				<?php
 					if(isset($_POST['fetchdata'])) 
 					{
-						echo "User Has submitted the form";
+						include("fetch.php");
 					}
 				?>
 				<form name="fetch" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" >
