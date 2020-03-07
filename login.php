@@ -2,11 +2,11 @@
 	if(isset($_POST['gateway_login'])) 
 	{
 		$conn = pg_connect(getenv("DATABASE_URL"));
-		$query = "SELECT * FROM userdata"; 
+		$query = "SELECT email FROM userdata"; 
 
 		$rs = pg_query($conn, $query) or die("Cannot execute query: $query\n");
 
-		while ($row = pg_fetch_row($rs)) {
+		while ($row = pg_fetch_all($rs)) {
 			echo "$row[0]\n";
 		}
 	}
