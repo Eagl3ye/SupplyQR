@@ -4,12 +4,10 @@
 		$email = $_POST['login_email'];
 		$pass = $_POST['login_pass'];
 		$conn = pg_connect(getenv("DATABASE_URL"));
-		$query = "SELECT email FROM userdata";
+		$query = "SELECT pass FROM userdata WHERE email = $email";
 
 		$rs = pg_query($conn, $query) or die("Cannot execute query: $query\n");
-
-		while ($row = pg_fetch_row($rs)) {
-			echo "$row[0] $row[1] $row[2] $row[3]";
-		}
+		$valpass = pg_fetch_all(result);
+		echo $valpass;
 	}
 ?>
