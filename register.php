@@ -17,7 +17,7 @@
 			pg_query($conn, $query); 
 
 			$query = "SELECT COUNT(email) FROM inventory_users WHERE email = '$email'";
-			$rs = pg_fetch_all(pg_query($conn, $query)); 
+			$rs = pg_query($conn, $query); 
 			echo $rs;
 			//if($query)
 			//$query = "INSERT INTO items VALUES ('$_POST[add_item]')";
