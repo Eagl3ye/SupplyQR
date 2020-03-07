@@ -8,7 +8,7 @@
 
 		$rs = pg_query($conn, $query) or die("Cannot execute query: $query\n");
 		$valpass = pg_fetch_result($rs);
-		if($valpass[0] == $pass){
+		if($valpass[pass] == $pass){
 			echo '<div class="text-light">Right password</div>';
 		}else{
 			echo '<div class="text-light"><?php echo $valpass?></div>';
