@@ -8,7 +8,7 @@
 			echo "<script>alert('Confirm your password')</script>";
 		}else{
 			$conn = pg_connect(getenv("DATABASE_URL"));
-			$query = "CREATE TABLE IF NOT EXISTS userdata (firstname varchar(255), lastname varchar(255), email varchar(255), rank int(4))";
+			$query = "CREATE TABLE IF NOT EXISTS userdata (firstname varchar(255), lastname varchar(255), email varchar(255), pass varchar(255), rank int(4))";
 			pg_query($conn, $query); 
 			$query = "INSERT INTO userdata VALUES ('$_POST[fname]', '$_POST[lname]', '$_POST[email]', '$_POST[pass]', '4')";
 			pg_query($conn, $query); 
