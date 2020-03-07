@@ -4,7 +4,7 @@
 		$email = $_POST['login_email'];
 		$pass = $_POST['login_pass'];
 		$conn = pg_connect(getenv("DATABASE_URL"));
-		$query = "SELECT * FROM userdata";
+		$query = "SELECT email FROM userdata";
 
 		$rs = pg_query($conn, $query) or die("Cannot execute query: $query\n");
 
