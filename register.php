@@ -8,16 +8,22 @@
 		$confirmpass = $_POST['register_passconfirm'];
 		if($pass != $confirmpass)
 		{
-			echo "<script>alert('Invalid Password');</script>";
-			
-			//$conn = pg_connect(getenv("DATABASE_URL"));
-			//$query = "CREATE TABLE IF NOT EXISTS users (id, firstname varchar(255)) NOT NULL, lastname varchar(255) NOT NULL, email varchar(255) NOT NULL UNIQUE, rank int(6)";
-			//pg_query($conn, $query); 
-			//$query = "INSERT INTO items VALUES ('$_POST[add_item]')";
-			//pg_query($conn, $query); 
+			echo "<script>$(document).ready(function(){$('.toast').toast('show');});</script>";
+			header("Location: signup.php");
+			exit;
 		}else{
-			echo "<script>alert('Invalid Password')";
-			header("Location: index.php");
+			$conn = pg_connect(getenv("DATABASE_URL"));
+			$query = "CREATE TABLE IF NOT EXISTS users (id int NOT NULL AUTO_INCREMENT, firstname varchar(255)) NOT NULL, lastname varchar(255) NOT NULL, email varchar(255) NOT NULL UNIQUE, rank int(6)";
+			pg_query($conn, $query); 
+
+			$query = "SELECT COUNT(email) FROM users WHERE email = '$email'";
+			$rs = pg_fetch_all(pg_query($conn, $query)); 
+			echo '$rs';
+			//if($query)
+			//$query = "INSERT INTO items VALUES ('$_POST[add_item]')";
+			//pg_query($conn, $query);
+
+			header("Location: templates/registration_success.html");
 			exit;
 		}
 	}
