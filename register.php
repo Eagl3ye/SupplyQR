@@ -6,7 +6,7 @@
 		$email = $_POST['register_email'];
 		$pass = $_POST['register_pass'];
 		$confirmpass = $_POST['register_passconfirm'];
-		if($pass == $confirmpass)
+		if($pass != $confirmpass)
 		{	
 			echo "<script>alert('Invalid Password')</script>";
 			//$conn = pg_connect(getenv("DATABASE_URL"));
