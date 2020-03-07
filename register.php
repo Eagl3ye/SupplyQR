@@ -8,7 +8,7 @@
 		$confirmpass = $_POST['register_passconfirm'];
 		if($pass != $confirmpass)
 		{
-			echo "<script>alert('Invalid Password'); document.getElementById('reg_fname').value = '<?php echo $fname?>'; document.getElementById('reg_lname').value = '<?php echo $lname?>'; document.getElementById('reg_email').value = '<?php echo $email?>'; document.getElementById('reg_pass').value = ''; document.getElementById('reg_cpass').value = '';</script>";
+			echo "<script>alert('Invalid Password');</script>";
 			
 			//$conn = pg_connect(getenv("DATABASE_URL"));
 			//$query = "CREATE TABLE IF NOT EXISTS users (id, firstname varchar(255)) NOT NULL, lastname varchar(255) NOT NULL, email varchar(255) NOT NULL UNIQUE, rank int(6)";
