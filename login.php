@@ -7,7 +7,11 @@
 		$query = "SELECT pass FROM userdata WHERE email='$email'";
 
 		$rs = pg_query($conn, $query) or die("Cannot execute query: $query\n");
-		$valpass = pg_fetch_all($rs);
-		echo $valpass;
+		$valpass = pg_fetch_result($rs);
+		if($valpass == $pass){
+			echo '<div class="text-light">Right password</div>';
+		}else{
+			echo '<div class="text-light">Wrong password</div>';
+		}
 	}
 ?>
