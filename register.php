@@ -8,7 +8,7 @@
 		$confirmpass = $_POST['register_passconfirm'];
 		if($pass != $confirmpass)
 		{
-			echo "<script>$(document).ready(function(){$('.toast').toast('show');});</script>";
+			echo "<script>alert('Invalid Password');</script>";
 			header("Location: signup.php");
 			exit;
 		}else{
