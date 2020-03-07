@@ -11,7 +11,7 @@
 		if($valpass == $pass){
 			echo '<div class="text-light">Right password</div>';
 		}else{
-			echo '<div class="text-light">$valpass</div>';
+			echo '<div class="text-light"><?php echo $valpass?></div>';
 		}
 	}
 ?>
