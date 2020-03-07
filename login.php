@@ -2,7 +2,7 @@
 	if(isset($_POST['gateway_login'])) 
 	{
 		$conn = pg_connect(getenv("DATABASE_URL"));
-		$query = "SELECT * FROM users"; 
+		$query = "SELECT * FROM userdata"; 
 
 		$rs = pg_query($conn, $query) or die("Cannot execute query: $query\n");
 
