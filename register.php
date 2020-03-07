@@ -3,15 +3,14 @@
 	{
 		$pass = $_POST['register_pass'];
 		$confirmpass = $_POST['register_passconfirm'];
-		$rank = 4;
 		if($pass != $confirmpass)
 		{
 			echo "<script>alert('Confirm your password')</script>";
 		}else{
 			$conn = pg_connect(getenv("DATABASE_URL"));
-			$query = "CREATE TABLE IF NOT EXISTS userdata (firstname varchar(255), lastname varchar(255), email varchar(255), pass varchar(255), rank int(4))";
+			$query = "CREATE TABLE IF NOT EXISTS userdata (firstname varchar(255), lastname varchar(255), email varchar(255), pass varchar(255), rank varchar(255))";
 			pg_query($conn, $query); 
-			$query = "INSERT INTO userdata VALUES ('$_POST[fname]', '$_POST[lname]', '$_POST[email]', '$_POST[pass]', '$rank')";
+			$query = "INSERT INTO userdata VALUES ('$_POST[fname]', '$_POST[lname]', '$_POST[email]', '$_POST[pass]', 'admin')";
 			pg_query($conn, $query); 
 			//$query = "CREATE TABLE IF NOT EXISTS inventory_users (id int NOT NULL AUTO_INCREMENT, firstname varchar(255) NOT NULL, lastname varchar(255) NOT NULL, email varchar(255) NOT NULL UNIQUE, password varchar(255) NOT NULL, rank int(4))";
 			//pg_query($conn, $query); 
