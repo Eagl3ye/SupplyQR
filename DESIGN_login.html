@@ -12,7 +12,6 @@
 		</style>
 	</head>
 	<body class="bg-dark">
-		
 		<div class="container-fluid mx-auto">
 			<div class="row">
 				<br>
@@ -42,32 +41,7 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="m-auto invisible">
-			<h2>Manage Item</h2>
-			<ul>
-				<form name="insert" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" >
-					<li>ADD AN ARTICLE:</li>
-					<li>
-						<input type="text" name="add_item" autocomplete="off"/>
-					</li>
-					<li>
-						<input type="submit" name="insertdata" value="Add" />
-					</li>
-				</form>
-			</ul>
-			
-			<ul>
-				<form name="fetch" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" >
-					<li>FIND AN ARTICLE:</li>
-					<li>
-						<input type="submit" name="fetchdata" value="Find" />
-					</li>
-				</form>
-			</ul>
-		</div>
-
-		<!--Bootstrap Dependencies-->
+			<!--Bootstrap Dependencies-->
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
