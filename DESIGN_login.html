@@ -3,6 +3,7 @@
 		<title>Supply Office WebApp Prtototype</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 		<link href="custom.css" rel="stylesheet" type="text/css"/>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 		<style>
@@ -11,42 +12,60 @@
 			}
 		</style>
 	</head>
-	<body>
-		<h2>Manage Item</h2>
-		<div class="m-auto">
+	<body class="bg-dark">
+		
+		<div class="container-fluid mx-auto">
+			<div class="row">
+				<br>
+				<br>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="mx-auto col-8 col-sm-6 col-md-4 col-lg-3 p-3 bg-light">
+						<form name="gateway_loginform" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" >
+							<li>
+								<input type="email" class="col-12 py-2 my-1" name="login_email" placeholder="E-mail Address" autocomplete="on" required/>
+							</li>
+							<li>
+								<input type="password" class="col-12 py-2 mt-1 mb-3" name="login_pass" placeholder="Password" autocomplete="off" required/>
+							</li>
+							<li>
+								<input type="submit" class="btn btn-success col-12 py-1 my-1" name="gateway_login" value="LOG-IN" />
+							</li>
+							<li>
+								<input type="submit" class="btn btn-primary col-12 py-1 my-1" name="gateway_guest" value="LOG-IN AS GUEST" />
+							</li>
+							<li>
+								<a href="signup.php">Create an account</a>
+							</li>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="m-auto invisible">
+			<h2>Manage Item</h2>
 			<ul>
-				<?php
-					if(isset($_POST['insertdata'])) 
-					{
-						$name1 = $_POST['add_item'];
-						echo "User Has submitted the form and entered this: <b> $name1 </b>";
-					}
-				?>
 				<form name="insert" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" >
 					<li>ADD AN ARTICLE:</li>
 					<li>
-						<input type="text" name="add_item" />
+						<input type="text" name="add_item" autocomplete="off"/>
 					</li>
 					<li>
-						<input type="submit" name="insertdata"/>
+						<input type="submit" name="insertdata" value="Add" />
 					</li>
 				</form>
 			</ul>
 			
 			<ul>
-				<?php
-					if(isset($_POST['fetchdata'])) 
-					{
-						echo "User Has submitted the form";
-					}
-				?>
 				<form name="fetch" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" >
 					<li>FIND AN ARTICLE:</li>
 					<li>
-						<input type="submit" name="fetchdata"/>
+						<input type="submit" name="fetchdata" value="Find" />
 					</li>
 				</form>
-			</ul>			
+			</ul>
 		</div>
 
 		<!--Bootstrap Dependencies-->
