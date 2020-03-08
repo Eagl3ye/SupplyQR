@@ -1,4 +1,5 @@
 <?php
+	$valpass = "";
 	if(isset($_POST['gateway_login'])) 
 	{
 		$email = $_POST['login_email'];
@@ -8,10 +9,10 @@
 
 		$rs = pg_query($conn, $query) or die("Cannot execute query: $query\n");
 		$valpass = pg_fetch_row($rs);
-		echo $valpass[0];
 		//if($valpass[pass] == $pass){
 		//	echo '<div class="text-light">Right password</div>';
 		//}else{
 		//}
 	}
+	echo $valpass[0];
 ?>
