@@ -3,12 +3,12 @@
 	{
 		$email = $_POST['login_email'];
 		$pass = $_POST['login_pass'];
-		$conn = pg_connect(getenv("DATABASE_URL")) or die("Unable to connect to the server: $conn\n");
+		$conn = pg_connect(getenv("DATABASE_URL"));
 		$query = "SELECT * FROM items";
 		$rs = pg_query($conn, $query) or die("Cannot execute query: $query\n");
 
 		while ($row = pg_fetch_row($rs)) {
-			echo "First Name: $row[0]";
+			echo $row[0];
 			echo "<br />\n";
 		}
 		pg_close($conn);
