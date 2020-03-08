@@ -12,7 +12,7 @@
 			
 			//$query = "CREATE TABLE IF NOT EXISTS userdata (firstname varchar(255), lastname varchar(255), email varchar(255), pass varchar(255), rank varchar(255))";
 			pg_query($conn, $query); 
-			$query = "INSERT INTO test VALUES ($_POST[fname], $_POST[lname])";
+			$query = "INSERT INTO test VALUES ('$_POST[fname]', '$_POST[lname]')";
 			pg_query($conn, $query);
 			header("Location: templates/registration_success.html");
 			exit;
