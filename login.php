@@ -8,7 +8,7 @@
 		$rs = pg_query($conn, $query) or die("Cannot execute query: $query\n");
 
 		while ($row = pg_fetch_row($rs)) {
-			echo "$row\n";
+			echo "$row[firstname]\n";
 		}
 		pg_close($conn);
 	}
