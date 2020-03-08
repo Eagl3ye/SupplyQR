@@ -10,5 +10,6 @@
 		while ($row = pg_fetch_row($rs)) {
 			echo "$row[0]\n";
 		}
+		pg_close($conn);
 	}
 ?>
